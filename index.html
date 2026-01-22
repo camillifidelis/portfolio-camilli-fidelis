@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="assets/images/logo/faviconCF.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/images/logo/faviconCF-32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="assets/images/logo/faviconCF-16.png" sizes="16x16" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camilli Fidelis - Backend Developer</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <img src="assets/images/logo/logo-dark.svg" alt="Camilli Fidelis" class="logo-img" id="logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Desenvolvedora de Software em Formação</h1>
+                <p class="hero-subtitle">Foco em Backend | Aprendendo a construir APIs</p>
+                <a href="assets/files/Curriculo_Camilli_Fidelis.pdf" download class="btn-download">
+  Baixar Currículo
+</a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Mim -->
+    <section id="sobre" class="section">
+        <div class="container">
+            <h2 class="section-title">Sobre Mim</h2>
+            <div class="about-content">
+                <p class="about-text">
+                    Estudante de Sistemas de Informação pela UFRRJ, com foco em desenvolvimento backend.
+                    Tenho experiência em contexto acadêmico e em empresa júnior (Signal Júnior) com processos
+                    de projeto, levantamento de requisitos e entrega em equipe.
+                </p>
+
+                <p class="about-text">
+                    Atualmente estou consolidando meus estudos em APIs REST com Java e Spring Boot,
+                    integração com bancos (MongoDB) e testes de endpoints com Postman. Busco minha primeira
+                    oportunidade profissional na área de tecnologia.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projetos -->
+    <section id="projetos" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Projetos</h2>
+            <div class="projects-grid">
+
+                <!-- ÚNICO PROJETO REAL -->
+                <article class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">API REST - Autores, Posts e Comentários</h3>
+                        <span class="project-tag">Java</span>
+                    </div>
+
+                    <p class="project-description">
+                        Projeto de estudo: API REST com Spring Boot e MongoDB. A aplicação trabalha com autores,
+                        posts e comentários, com operações de CRUD e testes via Postman.
+                    </p>
+
+                    <div class="project-tech">
+                        <span class="tech-badge">Spring Boot</span>
+                        <span class="tech-badge">MongoDB</span>
+                        <span class="tech-badge">Postman</span>
+                    </div>
+
+                    <!-- Links do projeto (não muda design, só adiciona utilidade) -->
+                    <div class="project-links">
+                        <a href="https://github.com/camillifidelis/cami-projeto-mongo" target="_blank" rel="noreferrer">
+                            Código (GitHub)
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+  <!-- Skills -->
+<section id="skills" class="section">
+  <div class="container">
+    <h2 class="section-title">Linguagens & Ferramentas</h2>
+
+    <div class="skills-modern">
+      <a class="skill-icon" href="https://www.java.com/" target="_blank" rel="noreferrer" aria-label="Java">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+        <span>Java</span>
+      </a>
+
+      <a class="skill-icon" href="https://spring.io/projects/spring-boot" target="_blank" rel="noreferrer" aria-label="Spring Boot">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot">
+        <span>Spring Boot</span>
+      </a>
+
+      <a class="skill-icon" href="https://www.mongodb.com/" target="_blank" rel="noreferrer" aria-label="MongoDB">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+        <span>MongoDB</span>
+      </a>
+
+      <a class="skill-icon" href="https://git-scm.com/" target="_blank" rel="noreferrer" aria-label="Git">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+        <span>Git</span>
+      </a>
+
+      <a class="skill-icon" href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+        <span>GitHub</span>
+      </a>
+
+      <a class="skill-icon" href="https://www.postman.com/" target="_blank" rel="noreferrer" aria-label="Postman">
+        <img src="https://www.svgrepo.com/show/354202/postman-icon.svg" alt="Postman">
+        <span>Postman</span>
+      </a>
+
+      <a class="skill-icon" href="https://maven.apache.org/" target="_blank" rel="noreferrer" aria-label="Maven">
+        <img src="https://www.svgrepo.com/show/354051/maven.svg" alt="Maven">
+        <span>Maven</span>
+      </a>
+
+      <a class="skill-icon" href="https://swagger.io/" target="_blank" rel="noreferrer" aria-label="REST / APIs">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swagger/swagger-original.svg" alt="REST / APIs">
+  <span>REST</span>
+</a>
+
+    </div>
+
+    <p class="skills-note">
+      Foco atual: APIs REST com Spring Boot + MongoDB, versionamento com Git/GitHub e testes com Postman.
+    </p>
+  </div>
+</section>
+
+
+    <!-- Contato -->
+    <section id="contato" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="contact-content">
+                <p class="contact-text">Interessado em trabalhar juntos? Envie-me uma mensagem!</p>
+
+              <form class="contact-form" id="contactForm" action="https://formspree.io/f/xrepzovp" method="POST">
+    <!-- Título do email -->
+    <input type="hidden" name="_subject" value="Contato via Portfólio - Camilli Fidelis">
+
+    <div class="form-group">
+        <label for="name">Nome</label>
+        <input type="text" id="name" name="name" placeholder="Seu nome completo" required>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="seuemail@email.com" required>
+    </div>
+
+    <div class="form-group">
+        <label for="title">Assunto</label>
+        <input type="text" id="title" name="title" placeholder="Título da mensagem" required>
+    </div>
+
+    <div class="form-group">
+        <label for="message">Mensagem</label>
+        <textarea id="message" name="message" rows="5" placeholder="Escreva sua mensagem aqui" required></textarea>
+    </div>
+
+    <button type="submit" class="btn-submit">Enviar Mensagem</button>
+
+    <!-- status -->
+    <p class="form-status" id="formStatus" aria-live="polite"></p>
+</form>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="year"></span> Camilli Fidelis. Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="https://github.com/camillifidelis" target="_blank" rel="noreferrer" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/camilli-fidelis-40287b228/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
