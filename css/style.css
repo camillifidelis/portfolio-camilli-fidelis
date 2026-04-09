@@ -190,16 +190,16 @@
 
   /* TIPOGRAFIA MOBILE */
   .hero-title {
-    font-size: 2.2rem;
+    font-size: 1.5rem;
   }
 
   .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: 0.8rem;
   }
 
   /* FOTO */
   .hero-photo {
-    width: 200px;
+    width: 300px;
     height: auto;
   }
 
