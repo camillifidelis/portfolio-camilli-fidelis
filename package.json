@@ -1,0 +1,12 @@
+{
+  "name": "portfolio-camilli-fidelis",
+  "version": "1.0.0",
+  "description": "Portfolio de Camilli Fidelis - Backend Developer",
+  "scripts": {
+    "dev": "npx serve -l 3000",
+    "start": "npx serve -l 3000"
+  },
+  "keywords": ["portfolio", "backend", "java", "spring-boot"],
+  "author": "Camilli Fidelis",
+  "license": "MIT"
+}
