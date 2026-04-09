@@ -126,16 +126,16 @@
 
 /* Foto */
 .hero-photo {
-  width: 260px;
-  height: 260px;
+  width: 450px;
+  height: 450px;
   object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  transition: transform 0.4s ease;
+  border-radius :0;
+  box-shadow: none;
+  transition: none;
 }
 
 .hero-photo:hover {
-  transform: scale(1.05);
+  transform: none;
 }
 
 /* ===== Animações ===== */
@@ -329,42 +329,47 @@
 /* Skills */
 .skills-modern {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-  margin-top: 2rem;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  margin-top: 30px;
 }
+
 
 .skill-icon {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.9rem 1rem;
+  justify-content: center;
+
+  width: 90px;
+  height: 90px;
+
   border-radius: 12px;
-  border: 1px solid var(--border);
-  background-color: var(--card-bg);
   text-decoration: none;
-  color: var(--text-primary);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+
+  background-color: transparent;
+  border: none;
+
+  transition: all 0.25s ease;
 }
 
+
 .skill-icon:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px var(--shadow);
-  opacity: 0.95;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px var(--shadow);
 }
 
 .skill-icon img {
-  width: 26px;
-  height: 26px;
-  display: block;
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  margin-bottom: 8px;
 }
 
+
 .skill-icon span {
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-size: 12px;
   color: var(--text-secondary);
 }
 
@@ -559,20 +564,4 @@
 
 .skip-link:focus {
   top: 10px;
-}
-
-/* Esconde os dois por padrão (segurança) */
-.sun-icon,
-.moon-icon {
-  display: none;
-}
-
-/* Tema claro → mostra SOL */
-html[data-theme="light"] .sun-icon {
-  display: block;
-}
-
-/* Tema escuro → mostra LUA */
-html[data-theme="dark"] .moon-icon {
-  display: block;
 }
