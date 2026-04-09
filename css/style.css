@@ -38,7 +38,7 @@
 }
 
 .nav-menu a:hover {
-  color: var(--accent);
+  color: #4a5568;
 }
 
 .theme-toggle {
@@ -66,38 +66,127 @@
   display: none;
 }
 
-/* Hero Section */
+/* ===== Hero Section ===== */
 .hero {
+  position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding-top: 80px;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/images/bg-hero.jpg") no-repeat center/cover;
+  color: #fff;
 }
 
+/* Layout principal */
 .hero-content {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
 }
 
+/* Texto */
+.hero-text {
+  flex: 1;
+  opacity: 0;
+  transform: translateX(-40px);
+  animation: slideInLeft 0.8s ease forwards;
+}
+
+/* Imagem */
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transform: translateX(40px);
+  animation: slideInRight 0.8s ease forwards;
+}
+
+/* Título */
 .hero-title {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;
   letter-spacing: -0.02em;
+  color: #fff;
 }
 
+/* Subtítulo */
 .hero-subtitle {
   font-size: 1.5rem;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.85);
   font-weight: 400;
+  margin-bottom: 20px;
+}
+
+/* Foto */
+.hero-photo {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease;
+}
+
+.hero-photo:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Animações ===== */
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text,
+  .hero-image {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero-photo {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
 }
 
 /* Hero Download Button */
 .hero .btn-download {
   display: inline-block;
-  margin-top: 2rem; 
+  margin-top: 2rem;
   padding: 0.8rem 1.8rem;
-  background-color: #5E4A72; 
+  background-color: #5E4A72;
   color: white;
   font-weight: 600;
   border-radius: 8px;
@@ -237,7 +326,7 @@
   background-color: var(--card-bg);
 }
 
-/* Skills  */
+/* Skills */
 .skills-modern {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -359,7 +448,7 @@
   text-align: center;
   color: var(--text-secondary);
   line-height: 1.4;
-  min-height: 1.2rem; 
+  min-height: 1.2rem;
 }
 
 /* Footer */
@@ -449,4 +538,41 @@
   .skills-modern {
     grid-template-columns: 1fr;
   }
+}
+
+/* Foco visível */
+:focus {
+  outline: 3px solid #000;
+  outline-offset: 2px;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: black;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+/* Esconde os dois por padrão (segurança) */
+.sun-icon,
+.moon-icon {
+  display: none;
+}
+
+/* Tema claro → mostra SOL */
+html[data-theme="light"] .sun-icon {
+  display: block;
+}
+
+/* Tema escuro → mostra LUA */
+html[data-theme="dark"] .moon-icon {
+  display: block;
 }
