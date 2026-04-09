@@ -161,23 +161,34 @@
 
 /* ===== Responsivo ===== */
 @media (max-width: 768px) {
+
   .hero-content {
     flex-direction: column;
     text-align: center;
+    gap: 20px;
   }
 
-  .hero-text,
+  /* ORDEM VISUAL */
+  .hero-text {
+    order: 1;
+  }
+
+  .hero-actions {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
   .hero-image {
+    order: 3;
     animation: none;
     opacity: 1;
     transform: none;
   }
 
-  .hero-photo {
-    width: 200px;
-    height: 200px;
-  }
-
+  /* TIPOGRAFIA MOBILE */
   .hero-title {
     font-size: 2.2rem;
   }
@@ -185,7 +196,24 @@
   .hero-subtitle {
     font-size: 1.2rem;
   }
+
+  /* FOTO */
+  .hero-photo {
+    width: 200px;
+    height: auto;
+  }
+
+  /* ÍCONES */
+  .social-icons {
+    justify-content: center;
+  }
+
+  .social-icons svg {
+    width: 24px;
+    height: 24px;
+  }
 }
+
 
 /* Hero Download Button */
 .hero .btn-download {
