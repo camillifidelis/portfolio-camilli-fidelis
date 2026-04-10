@@ -401,37 +401,31 @@
 }
 
 /* Skills */
+
 .skills-modern {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 20px;
   justify-items: center;
-  margin-top: 30px;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-
 .skill-icon {
+  width: 100px;
+  height: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  width: 90px;
-  height: 90px;
-
+  gap: 6px;
   border-radius: 12px;
-  text-decoration: none;
-
-  background-color: transparent;
-  border: none;
-
-  transition: all 0.25s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-
 .skill-icon:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px var(--shadow);
+  transform: translateY(-4px);
 }
 
 .skill-icon img {
@@ -441,19 +435,63 @@
   margin-bottom: 8px;
 }
 
-
 .skill-icon span {
   font-size: 12px;
   color: var(--text-secondary);
 }
 
-/* Nota abaixo dos ícones */
 .skills-note {
   max-width: 900px;
   margin: 1.5rem auto 0;
   text-align: center;
   color: var(--text-secondary);
   line-height: 1.6;
+}
+
+/* =========================
+   SKILLS WALLPAPER BACKGROUND
+========================= */
+
+.skills-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 120px 0;
+  background-image: var(--skills-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* overlay para não atrapalhar leitura */
+.skills-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 0;
+}
+
+/* garante conteúdo acima do overlay */
+.skills-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .skills-modern {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-modern {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skill-icon {
+    padding: 14px 10px;
+  }
 }
 
 /* Contato */
@@ -586,6 +624,7 @@
 
   .section-title {
     font-size: 2rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
   }
 
   .projects-grid {
@@ -638,4 +677,206 @@
 
 .skip-link:focus {
   top: 10px;
+}
+
+
+/* =========================
+   THEME FIX 
+========================= */
+
+:root {
+  --bg-window: #f5f6f8;  
+  --text: #111;
+  --border: #e6e6e6;
+  --shadow: rgba(0,0,0,0.08);
+  --bar-bg: #ffffff;
+  --skills-bg: url("../assets/images/wallpaper-skills-light.png");
+} 
+
+body.dark {
+  --bg-window: #0f1115;   
+  --text: #ffffff;
+  --border: #2a2f3a;
+  --shadow: rgba(0,0,0,0.5);
+  --bar-bg: #151922;
+  --skills-bg: url("../assets/images/wallpaper-skills-dark.png");
+}
+
+/* =========================
+   WINDOW
+========================= */
+
+.tech-window {
+  max-width: 900px;
+  margin: 60px auto;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--bg-window);
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 40px var(--shadow);
+}
+
+/* =========================
+   TITLE BAR
+========================= */
+
+.window-bar {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  background: var(--bar-bg);
+  border-bottom: 1px solid var(--border);
+}
+
+/* bolinhas estilo mac */
+.dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.dots span:nth-child(1) { background: #ff5f56; }
+.dots span:nth-child(2) { background: #ffbd2e; }
+.dots span:nth-child(3) { background: #27c93f; }
+
+
+/* =========================
+   CARD TECNOLOGIA
+========================= */
+
+.tech {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 90px;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 0.25s ease;
+}
+
+.tech img {
+  width: 42px;
+  height: 42px;
+  transition: transform 0.2s ease;
+}
+
+/* hover leve (sem zoom exagerado) */
+.tech:hover {
+  transform: translateY(-3px);
+}
+
+.tech:hover img {
+  transform: scale(1.05);
+}
+
+/* texto */
+.tech span {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+
+/* =========================
+   SKILLS SECTION WALLPAPER
+========================= */
+
+.skills-section {
+  background-image: var(--skills-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 6rem 0;
+}
+
+/* =========================
+   MAC WINDOW
+========================= */
+
+.tech-window {
+  max-width: 1000px;
+  margin: 60px auto;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--bg-window);
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 40px var(--shadow);
+}
+
+/* barra estilo mac */
+.window-bar {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  background: var(--bar-bg);
+  border-bottom: 1px solid var(--border);
+}
+
+/* bolinhas mac */
+.dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.dots span:nth-child(1) { background: #ff5f56; }
+.dots span:nth-child(2) { background: #ffbd2e; }
+.dots span:nth-child(3) { background: #27c93f; }
+
+/* título dentro da janela */
+.tech-title {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 20px 0;
+  color: var(--text);
+}
+
+/* grid 4 por linha */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  padding: 20px 30px 40px;
+  justify-items: center;
+}
+
+/* card */
+.tech {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 0.2s ease;
+}
+
+.tech img {
+  width: 45px;
+  height: 45px;
+}
+
+.tech:hover {
+  transform: translateY(-4px);
+}
+
+/* responsivo */
+@media (max-width: 768px) {
+  .tech-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

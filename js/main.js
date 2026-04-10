@@ -8,8 +8,8 @@ const HEADER_OFFSET = 80;
 // ===== Theme Toggle =====
 const themeToggle = $("#themeToggle");
 const logo = $("#logo");
-const heroPhoto = $("#heroPhoto");
 const html = document.documentElement;
+const body = document.body;
 
 function getPreferredTheme() {
   const saved = localStorage.getItem("theme");
@@ -23,7 +23,6 @@ function getPreferredTheme() {
 }
 
 function updateAssets(theme) {
-  // Logo
   if (logo) {
     logo.src =
       theme === "dark"
@@ -34,23 +33,26 @@ function updateAssets(theme) {
 
 function applyTheme(theme) {
   html.setAttribute("data-theme", theme);
+
+  body.classList.remove("light", "dark");
+  body.classList.add(theme);
+
   localStorage.setItem("theme", theme);
+
   updateAssets(theme);
 }
 
-// Inicialização
+// Inicialização do tema
 applyTheme(getPreferredTheme());
 
-// Controle do botão
+// Botão de tema
 if (themeToggle) {
-  const currentTheme = html.getAttribute("data-theme");
-  themeToggle.setAttribute("aria-pressed", currentTheme === "dark");
-
   themeToggle.addEventListener("click", () => {
     const current = html.getAttribute("data-theme") || "light";
     const newTheme = current === "dark" ? "light" : "dark";
 
     applyTheme(newTheme);
+
     themeToggle.setAttribute("aria-pressed", newTheme === "dark");
   });
 }
@@ -97,8 +99,9 @@ if (contactForm) {
 
 async function sendForm(form) {
   const action = form.getAttribute("action");
+
   if (!action || !action.startsWith("http")) {
-    throw new Error("Form action não configurado (ex: Formspree).");
+    throw new Error("Form action não configurado.");
   }
 
   const data = new FormData(form);
@@ -118,6 +121,7 @@ function setStatus(msg) {
 
 function setLoading(isLoading) {
   if (!submitBtn) return;
+
   submitBtn.disabled = isLoading;
   submitBtn.style.opacity = isLoading ? "0.7" : "1";
   submitBtn.style.cursor = isLoading ? "not-allowed" : "pointer";
@@ -135,28 +139,19 @@ if (contactForm) {
 
       if (res.ok) {
         contactForm.reset();
-        setStatus("Mensagem enviada. Vou te responder em breve.");
+        setStatus("Mensagem enviada com sucesso.");
       } else {
-        let errorText = "Não consegui enviar agora. Tenta novamente.";
-        try {
-          const json = await res.json();
-          if (json && json.errors && json.errors.length) {
-            errorText = json.errors.map((x) => x.message).join(" ");
-          }
-        } catch {}
-        setStatus(errorText);
+        setStatus("Erro ao enviar mensagem.");
       }
     } catch (err) {
-      setStatus(
-        "Envio não configurado. Coloque o endpoint no atributo action do formulário."
-      );
+      setStatus("Erro de envio. Verifique o formulário.");
     } finally {
       setLoading(false);
     }
   });
 }
 
-// ===== Header shadow on scroll =====
+// ===== Header Shadow =====
 const header = $(".header");
 let shadowOn = false;
 
@@ -176,3 +171,4 @@ window.addEventListener(
   },
   { passive: true }
 );
+
