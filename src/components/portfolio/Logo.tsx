@@ -1,5 +1,4 @@
-import logoLight from "@/assets/logo-light.svg.asset.json";
-import logoDark from "@/assets/logo-dark.svg.asset.json";
+import { MEDIA } from "@/content/media";
 import { cn } from "@/lib/utils";
 
 /**
@@ -11,14 +10,14 @@ export function Logo({ className }: { className?: string }) {
   return (
     <span className={cn("relative inline-flex aspect-[498/111]", className)}>
       <img
-        src={logoDark.url}
+        src={MEDIA.logoDark}
         alt="Camilli Fidelis"
         width={498}
         height={111}
         className={cn(base, "dark:hidden")}
       />
       <img
-        src={logoLight.url}
+        src={MEDIA.logoLight}
         alt="Camilli Fidelis"
         width={498}
         height={111}

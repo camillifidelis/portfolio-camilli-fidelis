@@ -1,23 +1,18 @@
 import { Database, Webhook } from "lucide-react";
-import armDark from "@/assets/robotic-arm-dark.webp.asset.json";
-import armLight from "@/assets/robotic-arm-light.webp.asset.json";
-import excel from "@/assets/icons/excel.webp.asset.json";
-import word from "@/assets/icons/word.webp.asset.json";
-import powerpoint from "@/assets/icons/powerpoint.webp.asset.json";
-import powerbi from "@/assets/icons/powerbi.webp.asset.json";
+import { MEDIA } from "@/content/media";
 import { STACK, type StackItem } from "@/content/portfolio";
 import { SectionHeading } from "./SectionHeading";
 import { cn } from "@/lib/utils";
 
-const LOCAL_ICONS = { excel: excel.url, word: word.url, powerpoint: powerpoint.url, powerbi: powerbi.url };
+const LOCAL_ICONS = MEDIA.icons;
 
 export function Stack() {
   return (
     <section id="skills" aria-labelledby="skills-title" className="relative isolate overflow-hidden py-24 md:py-32">
       {/* Robotic arm — complementary background, faded so it never competes with the content */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
-        <img src={armDark.url} alt="" loading="lazy" decoding="async" className="absolute right-[-30%] top-16 hidden w-[140%] max-w-none opacity-75 dark:block sm:right-[-10%] sm:w-[90%] lg:right-[-4%] lg:top-10 lg:w-[72%]" />
-        <img src={armLight.url} alt="" loading="lazy" decoding="async" className="absolute right-[-30%] top-16 w-[140%] max-w-none opacity-45 dark:hidden sm:right-[-10%] sm:w-[90%] lg:right-[-4%] lg:top-10 lg:w-[72%]" />
+        <img src={MEDIA.roboticArmDark} alt="" loading="lazy" decoding="async" className="absolute right-[-30%] top-16 hidden w-[140%] max-w-none opacity-75 dark:block sm:right-[-10%] sm:w-[90%] lg:right-[-4%] lg:top-10 lg:w-[72%]" />
+        <img src={MEDIA.roboticArmLight} alt="" loading="lazy" decoding="async" className="absolute right-[-30%] top-16 w-[140%] max-w-none opacity-45 dark:hidden sm:right-[-10%] sm:w-[90%] lg:right-[-4%] lg:top-10 lg:w-[72%]" />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/20" />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
       </div>

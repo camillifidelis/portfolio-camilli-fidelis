@@ -1,7 +1,5 @@
 import { ArrowDownRight, Download } from "lucide-react";
-import notebook from "@/assets/camilli-notebook.webp.asset.json";
-import horizon from "@/assets/hero-horizon.jpg.asset.json";
-import cv from "@/assets/curriculo.pdf.asset.json";
+import { MEDIA } from "@/content/media";
 import { Button } from "@/components/ui/button";
 import { SocialLinks } from "./SocialLinks";
 
@@ -37,7 +35,7 @@ export function Hero() {
               </a>
             </Button>
             <Button asChild variant="glass" size="xl">
-              <a href={cv.url} download="Curriculo-CamilliFidelis.pdf">
+              <a href={MEDIA.cv} download="Curriculo-CamilliFidelis.pdf">
                 <Download />
                 Baixar currículo
               </a>
@@ -46,7 +44,7 @@ export function Hero() {
           </div>
         </div>
 
-        <HeroVisual src={notebook.url} horizon={horizon.url} />
+        <HeroVisual src={MEDIA.profile} horizon={MEDIA.heroHorizon} />
       </div>
     </section>
   );

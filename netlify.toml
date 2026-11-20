@@ -1,0 +1,15 @@
+# Netlify build for the TanStack Start app. Nitro auto-detects Netlify during the
+# build and emits the static files plus the server function Netlify needs.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NITRO_PRESET = "netlify"
+
+# Keep the CV link from the previous version of the site working.
+[[redirects]]
+  from = "/assets/files/Curriculo-CamilliFidelis.pdf"
+  to = "/media/files/Curriculo-CamilliFidelis.pdf"
+  status = 301
